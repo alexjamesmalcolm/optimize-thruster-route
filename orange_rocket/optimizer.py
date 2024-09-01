@@ -1,7 +1,6 @@
 from typing import List, Tuple
 from dataclasses import dataclass
 from pulp import LpProblem, LpVariable, LpMinimize, lpSum
-from pprint import pprint
 
 
 @dataclass
@@ -17,7 +16,7 @@ class Result:
     vehicle_velocities: List[Tuple[float, float]]
 
 
-def do_thing(
+def optimize(
     starting_point: Tuple[float, float],
     goal: Tuple[float, float],
     obstacles: list[Obstacle],
@@ -121,14 +120,3 @@ def do_thing(
             for i in range(max_time_segments)
         ],
     )
-
-
-if __name__ == "__main__":
-    result = do_thing(
-        starting_point=(0, 0.5),
-        goal=(1, 1),
-        obstacles=[],
-        max_time_segments=20,
-        thrust_magnitude=0.05,
-    )
-    pprint(result)

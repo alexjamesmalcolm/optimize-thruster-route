@@ -1,2 +1,9 @@
 # Virtual Environment
 venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Animations
+*.mp4
+*.gif
